@@ -10,5 +10,7 @@ public class Main {
         game.fillArray();
         game.setObjectOnLocation(3, 4);
         game.printGameBoard();
+        User user = new User();
+        user.userInputAnimals();
     }
 }

@@ -2,6 +2,8 @@ package com.company;
 
 import java.util.Random;
 
+/*Created by David Nilsson(Fjedern) on 2020-09-21*/
+
 public class gameBoard {
     private int width;
     private int height;
@@ -10,7 +12,6 @@ public class gameBoard {
     public int getWidth() {
         return width;
     }
-
 
     public int getHeight() {
         return height;
@@ -49,11 +50,12 @@ public class gameBoard {
         }
     }
 
-    //Clear on x, y
+    //Clear on (x, y)
     public void clearScreenOnLocation(int x, int y){
         this.matrix[y][x] = '-';
     }
 
+    //setObject on (x,y)
     public void setObjectOnLocation(int x, int y){
         this.matrix[y - 1][x - 1] = 'T';
     }
