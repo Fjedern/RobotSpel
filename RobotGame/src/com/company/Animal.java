@@ -1,18 +1,14 @@
 package com.company;
 
-import java.util.ArrayList;
 import java.util.Random;
 
 public class Animal extends GameBoard {
     private int currentX;
     private int currentY;
     private char name;
-    private int moves;
-    private int steps; //5
-
-
-
+    private int steps;
     private boolean hitTheWall = false;
+    Random rand = new Random();
 
 
     // Defaultkonstruktor
@@ -21,15 +17,16 @@ public class Animal extends GameBoard {
         this.currentX = 3;
         this.currentY = 4;
         this.hitTheWall = false;
-        this.moves = 1;
+        this.steps=1;
 
     }
+
 
     public Animal(char name, int x, int y) {
         this.currentX = x;
         this.currentY = y;
         this.name = name;
-      
+
 
     }
 
@@ -53,22 +50,13 @@ public class Animal extends GameBoard {
         this.currentY = currentY;
     }
 
-    public int getMoves() {
-        Random random = new Random();
-        int move = random.nextInt(steps) + 1;
-        return moves;
-    }
-
-    public void setMoves(int moves) {
-        this.moves = moves;
-    }
-
     public int getSteps() {
         return steps;
     }
 
     public void setSteps(int steps) {
-        this.steps = steps;
+        int back = rand.nextInt(steps) + 1;
+        this.steps = back;
     }
 
     public void setName(char name) {

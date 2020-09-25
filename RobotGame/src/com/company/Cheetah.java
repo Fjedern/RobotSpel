@@ -1,12 +1,13 @@
 package com.company;
 
 public class Cheetah extends Animal{
-    // Djuret tecken på skärmen
-    // Max antal steg = djuret max
+
     // Full mage timer eller antal steg.
 
-
-    public Cheetah(){
+    //Konstruktor
+    public Cheetah(int x, int y){
+        setCurrentX(x);
+        setCurrentY(y);
         setSteps(3);
         setName('C');
     }
