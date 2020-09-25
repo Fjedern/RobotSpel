@@ -23,10 +23,24 @@ public class Main {
         //Ask user for animal input
         int antalZebra;
         int antalCheetah;
-        System.out.println("Hur många Z?");
+        System.out.println("How many Zebras?");
         antalZebra = scan.nextInt();
-        System.out.println("Hur många C?");
+        while (antalZebra < 1){ //Check that there is at least one zebra in the game.
+            System.out.println("You must have at least 1 Zebra!\nHow many Zebras?");
+            antalZebra = scan.nextInt();
+        }
+        System.out.println("How many Cheetahs?");
         antalCheetah = scan.nextInt();
+        while (antalCheetah <1 || antalCheetah > antalZebra){ //Check that there is at least one cheetah and that they are fewer than Zebras
+            if(antalCheetah > antalZebra) {
+                System.out.println("Too many cheetahs!\nYou can't have more cheetahs than zebras!");
+            }
+            else{
+                System.out.println("You must have at least 1 Cheetah!");
+            }
+            System.out.println("How many Cheetahs?");
+            antalCheetah = scan.nextInt();
+        }
 
         //Create Zebra and generate random starting positions
         for (int i = 0; i < antalZebra; i++) {
