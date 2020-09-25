@@ -64,7 +64,7 @@ public class Main {
         game.printGameBoard();
         System.out.println();
 
-        int steps = 1;
+        // int steps = 1;
         Direction direction;
 
 
@@ -72,7 +72,7 @@ public class Main {
         while (true) {
             for (int j = 0; j < animalList.size(); j++) { //Loops animals
                 direction = Direction.values()[rand.nextInt(Direction.values().length)];
-                for (int i = 0; i < steps; i++) {  //Loops steps
+                for (int i = 0; i < 1 ; i++) {  //Loops steps
                     game.clearScreenOnLocation(animalList.get(j).getCurrentX(), animalList.get(j).getCurrentY()); //Erase previous animal position
                     switch (direction) {    //Different directions
                         case LEFT:

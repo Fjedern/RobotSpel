@@ -7,6 +7,11 @@ public class Animal extends GameBoard {
     private int currentX;
     private int currentY;
     private char name;
+    private int moves;
+    private int steps; //5
+
+
+
     private boolean hitTheWall = false;
 
 
@@ -16,6 +21,7 @@ public class Animal extends GameBoard {
         this.currentX = 3;
         this.currentY = 4;
         this.hitTheWall = false;
+        this.moves = 1;
 
     }
 
@@ -23,6 +29,7 @@ public class Animal extends GameBoard {
         this.currentX = x;
         this.currentY = y;
         this.name = name;
+      
 
     }
 
@@ -44,6 +51,28 @@ public class Animal extends GameBoard {
 
     public void setCurrentY(int currentY) {
         this.currentY = currentY;
+    }
+
+    public int getMoves() {
+        Random random = new Random();
+        int move = random.nextInt(steps) + 1;
+        return moves;
+    }
+
+    public void setMoves(int moves) {
+        this.moves = moves;
+    }
+
+    public int getSteps() {
+        return steps;
+    }
+
+    public void setSteps(int steps) {
+        this.steps = steps;
+    }
+
+    public void setName(char name) {
+        this.name = name;
     }
 
     public void moveAnimalRight() {
