@@ -2,12 +2,11 @@ package com.company;
 
 import java.util.Random;
 
-/*Created by David Nilsson(Fjedern) on 2020-09-21*/
-
-public class gameBoard {
+public class GameBoard {
     private int width;
     private int height;
     private char[][] matrix;
+    private char name;
 
     public int getWidth() {
         return width;
@@ -25,7 +24,14 @@ public class gameBoard {
         this.matrix = matrix;
     }
 
-    public gameBoard(int width, int height) {
+    //Default
+    public GameBoard(){
+        width = 40;
+        height = 8;
+        this.matrix = new char[this.height][this.width];
+    }
+
+    public GameBoard(int width, int height) {
         this.width = width;
         this.height = height;
         this.matrix = new char[this.height][this.width];
@@ -50,14 +56,18 @@ public class gameBoard {
         }
     }
 
-    //Clear on (x, y)
+    public char whatIsOnSpot(int x, int y){
+        return matrix[x][y];
+    }
+
+    //Clear on x, y
     public void clearScreenOnLocation(int x, int y){
         this.matrix[y][x] = '-';
     }
 
-    //setObject on (x,y)
-    public void setObjectOnLocation(int x, int y){
-        this.matrix[y - 1][x - 1] = 'T';
+
+    public void setObjectOnLocation(char name, int x, int y){
+        this.matrix[y][x] = name;
     }
 
 }
