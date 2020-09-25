@@ -21,35 +21,17 @@ public class Main {
         ArrayList<Animal> animalList = new ArrayList<Animal>();
 
         //Ask user for animal input
-        int antalZebra;
-        int antalCheetah;
-        System.out.println("How many Zebras?");
-        antalZebra = scan.nextInt();
-        while (antalZebra < 1){ //Check that there is at least one zebra in the game.
-            System.out.println("You must have at least 1 Zebra!\nHow many Zebras?");
-            antalZebra = scan.nextInt();
-        }
-        System.out.println("How many Cheetahs?");
-        antalCheetah = scan.nextInt();
-        while (antalCheetah <1 || antalCheetah > antalZebra){ //Check that there is at least one cheetah and that they are fewer than Zebras
-            if(antalCheetah > antalZebra) {
-                System.out.println("Too many cheetahs!\nYou can't have more cheetahs than zebras!");
-            }
-            else{
-                System.out.println("You must have at least 1 Cheetah!");
-            }
-            System.out.println("How many Cheetahs?");
-            antalCheetah = scan.nextInt();
-        }
+        User user = new User();
+        user.animalCountInput();
 
         //Create Zebra and generate random starting positions
-        for (int i = 0; i < antalZebra; i++) {
+        for (int i = 0; i < user.getZebraCount(); i++) {
             startingPositionX = rand.nextInt(40);
             startingPositionY = rand.nextInt(8);
             animalList.add(new Animal('Z', startingPositionX, startingPositionY));
         }
         //Create Cheetah and generate random starting positions
-        for (int i = 0; i < antalCheetah; i++) {
+        for (int i = 0; i < user.getCheetahCount(); i++) {
             startingPositionX = rand.nextInt(40);
             startingPositionY = rand.nextInt(8);
             animalList.add(new Animal('C', startingPositionX, startingPositionY));
@@ -67,9 +49,10 @@ public class Main {
         int steps = 1;
         Direction direction;
 
+        boolean gameRunning = true;
 
         //Actual running. Running until pressing stop
-        while (true) {
+        while (gameRunning) {
             for (int j = 0; j < animalList.size(); j++) { //Loops animals
                 direction = Direction.values()[rand.nextInt(Direction.values().length)];
                 for (int i = 0; i < steps; i++) {  //Loops steps
@@ -106,7 +89,6 @@ public class Main {
                     }
                 }
             }
-
             game.printGameBoard();  //Print gameboard to console
             System.out.println();
             Thread.sleep(10);   //Pause. Print-out speed
