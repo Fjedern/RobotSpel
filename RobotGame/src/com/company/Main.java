@@ -30,6 +30,7 @@ public class Main {
             startingPositionY = rand.nextInt(8);
             animalList.add(new Animal('Z', startingPositionX, startingPositionY));
         }
+
         //Create Cheetah and generate random starting positions
         for (int i = 0; i < user.getCheetahCount(); i++) {
             startingPositionX = rand.nextInt(40);
