@@ -19,29 +19,32 @@ public class User {
     }
 
     public void setZebraCount(int zebraCount) {
-        if(zebraCount < 1){
+        while (zebraCount <= 0){
+
             System.out.println("You must have at least 1 Zebra!\nHow many Zebras?");
-            this.zebraCount = scan.nextInt();
-        }else {
+            zebraCount = scan.nextInt();
+        }
             this.zebraCount = zebraCount;
         }
-    }
+
 
     public int getCheetahCount() {
         return cheetahCount;
     }
 
     public void setCheetahCount(int cheetahCount) {
-        if(cheetahCount < 1){
-            System.out.println("You must have at least 1 Cheetah!");
-            this.cheetahCount = scan.nextInt();
+        while (cheetahCount <= 0 || cheetahCount > getZebraCount()) {
+            if (cheetahCount <= 0) {
+                System.out.println("You must have at least 1 Cheetah!\nHow many Cheetahs?");
+                cheetahCount = scan.nextInt();
+            }
+        else{
+            System.out.println("Too many cheetahs!\nYou can't have more cheetahs than zebras!\nHow many Cheetahs?");
+            cheetahCount = scan.nextInt();
         }
-        else if(cheetahCount > getZebraCount()){
-            System.out.println("Too many cheetahs!\nYou can't have more cheetahs than zebras!");
-            this.cheetahCount = scan.nextInt();
-        }else {
+        }
             this.cheetahCount = cheetahCount;
-        }
+
     }
 
     public void animalCountInput(){
