@@ -3,13 +3,13 @@ package com.company;
 import java.util.Scanner;
 
 
-public class User {
+public class User{
     Scanner scan = new Scanner(System.in);
     private int zebraCount;
     private int cheetahCount;
 
     //Default
-    public User(){
+    public User() {
         this.zebraCount = 0;
         this.cheetahCount = 0;
     }
@@ -19,14 +19,20 @@ public class User {
     }
 
     public void setZebraCount(int zebraCount) {
-        while (zebraCount <= 0){
+        while (zebraCount <= 0) {
+<<<<<<< HEAD
 
+=======
+>>>>>>> 285de999dac0b80c2f3548961808dafa26b06f5a
             System.out.println("You must have at least 1 Zebra!\nHow many Zebras?");
             zebraCount = scan.nextInt();
         }
-            this.zebraCount = zebraCount;
-        }
+        this.zebraCount = zebraCount;
+    }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 285de999dac0b80c2f3548961808dafa26b06f5a
 
     public int getCheetahCount() {
         return cheetahCount;
@@ -37,17 +43,15 @@ public class User {
             if (cheetahCount <= 0) {
                 System.out.println("You must have at least 1 Cheetah!\nHow many Cheetahs?");
                 cheetahCount = scan.nextInt();
+            } else {
+                System.out.println("Too many cheetahs!\nYou can't have more cheetahs than zebras!\nHow many Cheetahs?");
+                cheetahCount = scan.nextInt();
             }
-        else{
-            System.out.println("Too many cheetahs!\nYou can't have more cheetahs than zebras!\nHow many Cheetahs?");
-            cheetahCount = scan.nextInt();
         }
-        }
-            this.cheetahCount = cheetahCount;
-
+        this.cheetahCount = cheetahCount;
     }
 
-    public void animalCountInput(){
+    public void animalCountInput() {
         System.out.println("How many Zebras?");
         setZebraCount(scan.nextInt());
         System.out.println("How many Cheetahs?");
