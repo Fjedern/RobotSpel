@@ -28,14 +28,14 @@ public class Main {
         for (int i = 0; i < user.getZebraCount(); i++) {
             startingPositionX = rand.nextInt(40);
             startingPositionY = rand.nextInt(8);
-            animalList.add(new Animal('Z', startingPositionX, startingPositionY));
+            animalList.add(new Zebra( startingPositionX, startingPositionY));
         }
 
         //Create Cheetah and generate random starting positions
         for (int i = 0; i < user.getCheetahCount(); i++) {
             startingPositionX = rand.nextInt(40);
             startingPositionY = rand.nextInt(8);
-            animalList.add(new Animal('C', startingPositionX, startingPositionY));
+            animalList.add(new Cheetah( startingPositionX, startingPositionY));
         }
 
         //Set objects on respective coordinates on gameboard.
