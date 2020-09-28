@@ -2,7 +2,7 @@ package com.company;
 
 import java.util.Random;
 
-public class Animal extends GameBoard {
+public abstract class Animal extends GameBoard {
     private int currentX;
     private int currentY;
     private char name;
@@ -10,24 +10,19 @@ public class Animal extends GameBoard {
     private boolean hitTheWall = false;
     Random rand = new Random();
 
-
     // Defaultkonstruktor
     public Animal() {
         // styra hur många steg djuret ska gå denna omgång.
         this.currentX = 3;
         this.currentY = 4;
         this.hitTheWall = false;
-        this.steps=1;
-
+        this.steps = 1;
     }
-
 
     public Animal(char name, int x, int y) {
         this.currentX = x;
         this.currentY = y;
         this.name = name;
-
-
     }
 
     public int getCurrentX() {
