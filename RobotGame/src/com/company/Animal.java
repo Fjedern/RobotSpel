@@ -2,7 +2,7 @@ package com.company;
 
 import java.util.Random;
 
-public abstract class Animal extends GameBoard {
+public abstract class Animal extends GameBoard implements Movable {
     private int currentX;
     private int currentY;
     private char name;
