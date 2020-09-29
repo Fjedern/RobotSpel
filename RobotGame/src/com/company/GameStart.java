@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class GameStart {
 
-    public void addZebra(){
+    public void addZebra() {
 
     }
 
@@ -51,7 +51,7 @@ public class GameStart {
         game.printGameBoard();
         System.out.println();
 
-        int steps = 1;
+
         Direction direction;
 
         boolean gameRunning = true;
@@ -62,7 +62,8 @@ public class GameStart {
         while (gameRunning) {
             for (int j = 0; j < animalList.size(); j++) { //Loops animals
                 direction = Direction.values()[rand.nextInt(Direction.values().length)];
-                for (int i = 0; i < steps; i++) {  //Loops steps
+                int randomSteps = rand.nextInt(animalList.get(j).getSteps()) + 1; // Makes each animal take random steps within its range every round
+                for (int i = 0; i < randomSteps; i++) {  //Loops steps
                     game.clearScreenOnLocation(animalList.get(j).getCurrentX(), animalList.get(j).getCurrentY()); //Erase previous animal position
                     switch (direction) {    //Different directions
                         case LEFT:
@@ -103,7 +104,7 @@ public class GameStart {
             System.out.printf("%s%n", "Zebror: " + zebraCount + " Cheetah: " + cheetahCount);   //Type out full cheetah count
             Thread.sleep(500);   //Pause. Print-out speed
 
-            if(zebraCount == 0){
+            if (zebraCount == 0) {
                 gameRunning = false;
                 System.out.print("Game over all zebras are eaten!");
             }

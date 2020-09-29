@@ -49,9 +49,9 @@ public abstract class Animal extends GameBoard {
         return steps;
     }
 
+
     public void setSteps(int steps) {
-        int back = rand.nextInt(steps) + 1;
-        this.steps = back;
+        this.steps = steps;
     }
 
     public void setName(char name) {

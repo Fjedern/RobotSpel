@@ -3,7 +3,7 @@ package com.company;
 import java.util.Scanner;
 
 
-public class User{
+public class User {
     Scanner scan = new Scanner(System.in);
     private int zebraCount;
     private int cheetahCount;
@@ -20,19 +20,11 @@ public class User{
 
     public void setZebraCount(int zebraCount) {
         while (zebraCount <= 0) {
-<<<<<<< HEAD
-
-=======
->>>>>>> 285de999dac0b80c2f3548961808dafa26b06f5a
             System.out.println("You must have at least 1 Zebra!\nHow many Zebras?");
             zebraCount = scan.nextInt();
         }
         this.zebraCount = zebraCount;
     }
-<<<<<<< HEAD
-
-=======
->>>>>>> 285de999dac0b80c2f3548961808dafa26b06f5a
 
     public int getCheetahCount() {
         return cheetahCount;
