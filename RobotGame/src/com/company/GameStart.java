@@ -6,8 +6,8 @@ import java.util.Scanner;
 
 public class GameStart {
 
-    public void addZebra() {
 
+    public void addZebra(){
     }
 
     //Actual running. Running until pressing stop
@@ -50,6 +50,9 @@ public class GameStart {
         //Print gameboard
         game.printGameBoard();
         System.out.println();
+
+
+
 
 
         Direction direction;
@@ -104,7 +107,10 @@ public class GameStart {
             System.out.printf("%s%n", "Zebror: " + zebraCount + " Cheetah: " + cheetahCount);   //Type out full cheetah count
             Thread.sleep(500);   //Pause. Print-out speed
 
-            if (zebraCount == 0) {
+
+
+
+            if(zebraCount == 0){
                 gameRunning = false;
                 System.out.print("Game over all zebras are eaten!");
             }

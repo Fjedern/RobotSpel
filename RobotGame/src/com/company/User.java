@@ -3,7 +3,7 @@ package com.company;
 import java.util.Scanner;
 
 
-public class User {
+public class User{
     Scanner scan = new Scanner(System.in);
     private int zebraCount;
     private int cheetahCount;
