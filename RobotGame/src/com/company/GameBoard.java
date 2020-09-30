@@ -2,6 +2,8 @@ package com.company;
 
 
 
+import static java.lang.System.currentTimeMillis;
+
 public class GameBoard {
     private int width;
     private int height;
@@ -66,5 +68,23 @@ public class GameBoard {
     public void setObjectOnLocation(char name, int x, int y){
         this.matrix[y][x] = name;
     }
+    public static boolean isCheetahHungry(Animal cheetah) {
+        boolean hungry = false;
+        if (cheetah.getHungry() == true) {
+            long time = currentTimeMillis();
+            cheetah.setStartTime(time);
+            cheetah.setHungry(false);
+            hungry =true;
+        } else {
+            long currentTime = currentTimeMillis() - cheetah.getStartTime();
+            if (currentTime > 5000) {
+                long time = currentTimeMillis();
+                cheetah.setStartTime(time);
+                hungry=true;
+            }
+        }
+        return hungry;
+    }}
 
-}
+
+

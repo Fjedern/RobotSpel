@@ -2,12 +2,16 @@ package com.company;
 
 
 
-public abstract class Animal extends GameBoard {
+public abstract class Animal extends GameBoard implements Movable {
     private int currentX;
     private int currentY;
     private char name;
     private int steps;
+
+    private boolean hungry;
+    private long startTime;
     //private boolean hitTheWall = false;
+
 
     // Defaultkonstruktor
     public Animal() {
@@ -56,6 +60,20 @@ public abstract class Animal extends GameBoard {
     public void setName(char name) {
         this.name = name;
     }
+    public boolean getHungry() {
+        return hungry;
+    }
+    public void setHungry(boolean value){
+        hungry = value;
+    }
+    public long getStartTime(){
+        return startTime;
+    }
+    public void setStartTime(long time){
+        startTime = time;
+    }
+
+
 
     /*public void moveAnimalRight() {
         //hitTheWall = false;

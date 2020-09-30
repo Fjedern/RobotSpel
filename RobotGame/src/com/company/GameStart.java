@@ -5,11 +5,6 @@ import java.util.Random;
 
 
 public class GameStart {
-
-
-    public void addZebra(){
-    }
-
     //Actual running. Running until pressing stop
     void start() throws InterruptedException {
         Random rand = new Random();
@@ -51,10 +46,6 @@ public class GameStart {
         game.printGameBoard();
 
 
-
-
-
-
         Direction direction;
 
         boolean gameRunning = true;
@@ -91,12 +82,23 @@ public class GameStart {
                     for (int a = d + 1; a < animalList.size(); a++) {
                         if (animalList.get(d).getCurrentX() == animalList.get(a).getCurrentX() && animalList.get(d).getCurrentY() == animalList.get(a).getCurrentY()) {
                             if (animalList.get(d).getName() != animalList.get(a).getName()) { // Checking collision between Zebra and Cheetah only not (zebra-zebra) or (cheetah-Cheetah)
+
+                                Animal cheetah;
+                                Animal zebra;
                                 if (animalList.get(d).getName() == 'Z') {
-                                    animalList.remove(d);
-                                    zebraCount--;
-                                } else {
-                                    animalList.remove(a);
-                                    zebraCount--;
+                                    zebra = animalList.get(d);
+                                    cheetah = animalList.get(a);
+                                    if (game.isCheetahHungry(cheetah) == true){
+                                        animalList.remove(zebra);
+                                        zebraCount--;
+                                    } else {
+                                        zebra = animalList.get(a);
+                                        cheetah = animalList.get(d);
+                                        if (game.isCheetahHungry(cheetah) == true) {
+                                            animalList.remove(zebra);
+                                            zebraCount--;
+                                        }
+                                    }
                                 }
                             }
                         }
@@ -106,9 +108,6 @@ public class GameStart {
             game.printGameBoard();  //Print gameboard to console
             System.out.printf("%s%n", "Zebror: " + zebraCount + " Cheetah: " + cheetahCount);   //Type out full cheetah count
             Thread.sleep(500);   //Pause. Print-out speed
-
-
-
 
             if(zebraCount == 0){
                 gameRunning = false;
