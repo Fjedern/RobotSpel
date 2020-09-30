@@ -91,8 +91,8 @@ public class GameStart {
                                         animalList.get(y).setStartTime(time);
                                         animalList.remove(x);
                                         zebraCount--;
-                                        System.out.print("1");
-                                    } else {
+                                        System.out.print("1");// test
+                                } else {
                                         long currentTime = currentTimeMillis() - animalList.get(y).getStartTime();
                                         //System.out.println(currentTime);
                                         if (currentTime > 10000) {
