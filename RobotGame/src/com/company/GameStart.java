@@ -2,12 +2,13 @@ package com.company;
 
 import java.util.ArrayList;
 import java.util.Random;
-import java.util.Scanner;
+
 
 public class GameStart {
     //Actual running. Running until pressing stop
     void start() throws InterruptedException {
         Random rand = new Random();
+
 
         int startingPositionX;
         int startingPositionY;
@@ -43,7 +44,7 @@ public class GameStart {
 
         //Print gameboard
         game.printGameBoard();
-        System.out.println();
+
 
         Direction direction;
 
@@ -54,9 +55,10 @@ public class GameStart {
 
         while (gameRunning) {
             for (int j = 0; j < animalList.size(); j++) { //Loops animals
-                direction = Direction.values()[rand.nextInt(Direction.values().length)];
+                //direction = Direction.values()[rand.nextInt(Direction.values().length)];
                 int randomSteps = rand.nextInt(animalList.get(j).getSteps()) + 1; // Makes each animal take random steps within its range every round
                 for (int i = 0; i < randomSteps; i++) {  //Loops steps
+                    direction = Direction.values()[rand.nextInt(Direction.values().length)];
                     game.clearScreenOnLocation(animalList.get(j).getCurrentX(), animalList.get(j).getCurrentY()); //Erase previous animal position
                     switch (direction) {    //Different directions
                         case LEFT:
@@ -103,12 +105,12 @@ public class GameStart {
                 }
             }
             game.printGameBoard();  //Print gameboard to console
-            System.out.println();
             System.out.printf("%s%n", "Zebror: " + zebraCount + " Cheetah: " + cheetahCount);   //Type out full cheetah count
             Thread.sleep(500);   //Pause. Print-out speed
 
             if(zebraCount == 0){
                 gameRunning = false;
+                game.printGameBoard();  //Print gameboard to console
                 System.out.print("Game over all zebras are eaten!");
             }
         }
