@@ -80,7 +80,6 @@ public class GameStart {
                     for (int a = d + 1; a < animalList.size(); a++) {
                         if (animalList.get(d).getCurrentX() == animalList.get(a).getCurrentX() && animalList.get(d).getCurrentY() == animalList.get(a).getCurrentY()) {
                             if (animalList.get(d).getName() != animalList.get(a).getName()) { // Checking collision between Zebra and Cheetah only not (zebra-zebra) or (cheetah-Cheetah)
-
                                 Animal cheetah;
                                 Animal zebra;
                                 if (animalList.get(d).getName() == 'Z') {
