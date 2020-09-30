@@ -7,9 +7,11 @@ public abstract class Animal extends GameBoard implements Movable {
     private int currentY;
     private char name;
     private int steps;
+    private boolean hungry;
+    private long startTime;
     private boolean hitTheWall = false;
     Random rand = new Random();
-    // test 
+    // test
 
     // Defaultkonstruktor
     public Animal() {
@@ -58,6 +60,20 @@ public abstract class Animal extends GameBoard implements Movable {
     public void setName(char name) {
         this.name = name;
     }
+    public boolean getHungry() {
+        return hungry;
+    }
+    public void setHungry(boolean value){
+        hungry = value;
+    }
+    public long getStartTime(){
+        return startTime;
+    }
+    public void setStartTime(long time){
+        startTime = time;
+    }
+
+
 
     public void moveAnimalRight() {
         hitTheWall = false;
