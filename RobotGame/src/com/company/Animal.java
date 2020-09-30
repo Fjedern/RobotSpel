@@ -1,22 +1,21 @@
 package com.company;
 
-import java.util.Random;
+
 
 public abstract class Animal extends GameBoard {
     private int currentX;
     private int currentY;
     private char name;
     private int steps;
-    private boolean hitTheWall = false;
-    Random rand = new Random();
+    //private boolean hitTheWall = false;
 
     // Defaultkonstruktor
     public Animal() {
         // styra hur många steg djuret ska gå denna omgång.
         this.currentX = 3;
         this.currentY = 4;
-        this.hitTheWall = false;
         this.steps = 1;
+        //this.hitTheWall = false;
     }
 
     public Animal(char name, int x, int y) {
@@ -58,11 +57,11 @@ public abstract class Animal extends GameBoard {
         this.name = name;
     }
 
-    public void moveAnimalRight() {
-        hitTheWall = false;
+    /*public void moveAnimalRight() {
+        //hitTheWall = false;
         int right = this.currentX;
         int up = this.currentY;
-        if (right < 39 && hitTheWall == false) {
+        if (right < 39) {
             right++;
             setCurrentX(right);
         } else {
@@ -80,10 +79,10 @@ public abstract class Animal extends GameBoard {
     //whatIsOnSpot(right++, up) == '-'
 
     public void moveAnimalLeft() {
-        hitTheWall = false;
+        //hitTheWall = false;
         int right = this.currentX;
         int up = this.currentY;
-        if (right > 0 && hitTheWall == false) {
+        if (right > 0) {
             right--;
             setCurrentX(right);
         } else {
@@ -95,16 +94,14 @@ public abstract class Animal extends GameBoard {
                 right++;
                 setCurrentX(right);
             }
-            right++;
-            setCurrentX(right);
         }
     }
 
     public void moveAnimalUp() {
-        hitTheWall = false;
+        //hitTheWall = false;
         int left = this.currentX;
         int up = this.currentY;
-        if (up > 0 && hitTheWall == false) {
+        if (up > 0) {
             up--;
             setCurrentY(up);
         } else {
@@ -120,10 +117,10 @@ public abstract class Animal extends GameBoard {
     }
 
     public void moveAnimalDown() {
-        hitTheWall = false;
+        //hitTheWall = false;
         int left = this.currentX;
         int down = this.currentY;
-        if (down < 7 && hitTheWall == false) {
+        if (down < 7) {
             down++;
             setCurrentY(down);
         } else {
@@ -136,10 +133,81 @@ public abstract class Animal extends GameBoard {
                 setCurrentY(down);
             }
         }
+    }*/
+    public void moveAnimalRight() {
+        int right = this.currentX;
+        int up = this.currentY;
+        if (right < 39) {
+            right++;
+            setCurrentX(right);
+        } else {
+            if (up < 7) {
+                up++;
+                setCurrentY(up);
+            } else {
+                up--;
+                setCurrentY(up);
+            }
+        }
     }
 
-    public void setHitTheWall(boolean hitTheWall) {
-        this.hitTheWall = hitTheWall;
+
+
+    public void moveAnimalLeft() {
+        int right = this.currentX;
+        int up = this.currentY;
+        if (right > 0) {
+            right--;
+            setCurrentX(right);
+        } else {
+            if (up < 7) {
+                up++;
+                setCurrentY(up);
+            } else {
+                up--;
+                setCurrentY(up);
+            }
+        }
     }
+
+    public void moveAnimalUp() {
+        int left = this.currentX;
+        int up = this.currentY;
+        if (up > 0) {
+            up--;
+            setCurrentY(up);
+        } else {
+
+            if (left > 0) {
+                left--;
+                setCurrentX(left);
+            } else {
+                left++;
+                setCurrentX(left);
+            }
+        }
+    }
+
+    public void moveAnimalDown() {
+        int left = this.currentX;
+        int down = this.currentY;
+        if (down < 7) {
+            down++;
+            setCurrentY(down);
+        } else {
+
+            if (left > 0) {
+                left--;
+                setCurrentX(left);
+            } else {
+                left++;
+                setCurrentX(left);
+            }
+        }
+    }
+
+    /*public void setHitTheWall(boolean hitTheWall) {
+        this.hitTheWall = hitTheWall;
+    }*/
 }
 

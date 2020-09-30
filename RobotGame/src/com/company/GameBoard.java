@@ -1,12 +1,11 @@
 package com.company;
 
-import java.util.Random;
+
 
 public class GameBoard {
     private int width;
     private int height;
     private char[][] matrix;
-    private char name;
 
     public int getWidth() {
         return width;
@@ -54,11 +53,9 @@ public class GameBoard {
             }
             System.out.println();
         }
+        System.out.println();
     }
 
-    public char whatIsOnSpot(int x, int y){
-        return matrix[x][y];
-    }
 
     //Clear on x, y
     public void clearScreenOnLocation(int x, int y){
