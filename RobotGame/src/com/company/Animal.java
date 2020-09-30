@@ -9,6 +9,7 @@ public abstract class Animal extends GameBoard implements Movable {
     private int steps;
     private boolean hitTheWall = false;
     Random rand = new Random();
+    // test 
 
     // Defaultkonstruktor
     public Animal() {
