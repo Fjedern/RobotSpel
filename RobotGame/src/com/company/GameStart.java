@@ -95,7 +95,7 @@ public class GameStart {
                                         cheetah = animalList.get(d);
                                         if (game.isCheetahHungry(cheetah) == true) {
                                             animalList.remove(zebra);
-                                            zebraCount--;
+                                            zebraCount--; // test
                                         }
                                     }
                                 }
