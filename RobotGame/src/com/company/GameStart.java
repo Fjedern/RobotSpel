@@ -55,10 +55,9 @@ public class GameStart {
 
         while (gameRunning) {
             for (int j = 0; j < animalList.size(); j++) { //Loops animals
-                //direction = Direction.values()[rand.nextInt(Direction.values().length)];
-                int randomSteps = rand.nextInt(animalList.get(j).getSteps()) + 1; // Makes each animal take random steps within its range every round
+                direction = Direction.values()[rand.nextInt(Direction.values().length)];
+                int randomSteps = rand.nextInt(animalList.get(j).getSteps()) + 1; // Makes each animal take random number of steps within its range every round
                 for (int i = 0; i < randomSteps; i++) {  //Loops steps
-                    direction = Direction.values()[rand.nextInt(Direction.values().length)];
                     game.clearScreenOnLocation(animalList.get(j).getCurrentX(), animalList.get(j).getCurrentY()); //Erase previous animal position
                     switch (direction) {    //Different directions
                         case LEFT:
@@ -78,6 +77,7 @@ public class GameStart {
                     }
                     game.setObjectOnLocation(animalList.get(j).getName(), animalList.get(j).getCurrentX(), animalList.get(j).getCurrentY()); //Assign new positio to gameboard
                 }
+                animalList.get(j).setHitTheWall(false); // Reset boolean used in moveAnemalLeft etc. in Anemal clas, after the animal has done its random steps.
                 for (int d = 0; d < animalList.size(); d++) { // compare x and y value of each animals
                     for (int a = d + 1; a < animalList.size(); a++) {
                         if (animalList.get(d).getCurrentX() == animalList.get(a).getCurrentX() && animalList.get(d).getCurrentY() == animalList.get(a).getCurrentY()) {
@@ -112,7 +112,7 @@ public class GameStart {
             if(zebraCount == 0){
                 gameRunning = false;
                 game.printGameBoard();  //Print gameboard to console
-                System.out.print("Game over all zebras are eaten!");
+                System.out.println("Game over all zebras are eaten!");
             }
         }
     }
