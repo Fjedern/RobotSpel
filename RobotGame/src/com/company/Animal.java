@@ -9,13 +9,13 @@ public abstract class Animal extends GameBoard implements Movable {
 
     private boolean hungry;
     private long startTime;
-    private boolean hitTheWall = false;
-
+    private boolean hitTheWall;
 
     // Defaultkonstruktor
     public Animal() {
         this.currentX = 3;
         this.currentY = 4;
+        this.hungry= true;
         this.steps = 1;
         this.hitTheWall = false;
     }
@@ -23,6 +23,7 @@ public abstract class Animal extends GameBoard implements Movable {
     public Animal(char name, int x, int y) {
         this.currentX = x;
         this.currentY = y;
+        this.hungry= true;
         this.name = name;
     }
 

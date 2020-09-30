@@ -68,6 +68,7 @@ public class GameBoard {
     public void setObjectOnLocation(char name, int x, int y){
         this.matrix[y][x] = name;
     }
+
     public static boolean isCheetahHungry(Animal cheetah) {
         boolean hungry = false;
         if (cheetah.getHungry() == true) {
