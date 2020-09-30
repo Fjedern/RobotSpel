@@ -3,6 +3,8 @@ package com.company;
 import java.util.ArrayList;
 import java.util.Random;
 
+import static java.lang.System.currentTimeMillis;
+
 
 public class GameStart {
     //Actual running. Running until pressing stop
@@ -78,35 +80,40 @@ public class GameStart {
                     }
                     game.setObjectOnLocation(animalList.get(j).getName(), animalList.get(j).getCurrentX(), animalList.get(j).getCurrentY()); //Assign new positio to gameboard
                 }
-                for (int d = 0; d < animalList.size(); d++) { // compare x and y value of each animals
-                    for (int a = d + 1; a < animalList.size(); a++) {
-                        if (animalList.get(d).getCurrentX() == animalList.get(a).getCurrentX() && animalList.get(d).getCurrentY() == animalList.get(a).getCurrentY()) {
-                            if (animalList.get(d).getName() != animalList.get(a).getName()) { // Checking collision between Zebra and Cheetah only not (zebra-zebra) or (cheetah-Cheetah)
-                                Animal cheetah;
-                                Animal zebra;
-                                if (animalList.get(d).getName() == 'Z') {
-                                    zebra = animalList.get(d);
-                                    cheetah = animalList.get(a);
-                                    if (game.isCheetahHungry(cheetah) == true){
-                                        animalList.remove(zebra);
+                for (int x = 0; x < animalList.size(); x++) { // compare x and y value of each animals  0
+                    for (int y = x + 1; y < animalList.size(); y++) {          //                         1
+                        if (animalList.get(x).getCurrentX() == animalList.get(y).getCurrentX() && animalList.get(x).getCurrentY() == animalList.get(y).getCurrentY() && animalList.get(x).getName() != animalList.get(y).getName()) {     //Om samma plats
+                            //if (animalList.get(x).getName() != animalList.get(y).getName()) { // Checking collision between Zebra and Cheetah only not (zebra-zebra) or (cheetah-Cheetah)
+                                if (animalList.get(x).getName() == 'Z') {   //bara om Z i ytterloop
+                                    if (animalList.get(y).getHungry() == true) {
+                                        animalList.get(y).setHungry(false);
+                                        long time = currentTimeMillis();
+                                        animalList.get(y).setStartTime(time);
+                                        animalList.remove(x);
                                         zebraCount--;
+                                        System.out.print("1");
                                     } else {
-                                        zebra = animalList.get(a);
-                                        cheetah = animalList.get(d);
-                                        if (game.isCheetahHungry(cheetah) == true) {
-                                            animalList.remove(zebra);
+                                        long currentTime = currentTimeMillis() - animalList.get(y).getStartTime();
+                                        //System.out.println(currentTime);
+                                        if (currentTime > 10000) {
+                                            animalList.get(y).setHungry(false);
+                                            long time = currentTimeMillis();
+                                            //System.out.println(time);
+                                            animalList.get(y).setStartTime(time);
+                                            animalList.remove(x);
                                             zebraCount--;
+                                            System.out.print("2");
                                         }
                                     }
                                 }
-                            }
+                            //}
                         }
                     }
                 }
             }
             game.printGameBoard();  //Print gameboard to console
             System.out.printf("%s%n", "Zebror: " + zebraCount + " Cheetah: " + cheetahCount);   //Type out full cheetah count
-            Thread.sleep(500);   //Pause. Print-out speed
+            Thread.sleep(50);   //Pause. Print-out speed
 
             if(zebraCount == 0){
                 gameRunning = false;
