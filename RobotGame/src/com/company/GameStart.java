@@ -109,7 +109,7 @@ public class GameStart {
                 }
             }
             game.printGameBoard();  //Print gameboard to console
-            System.out.printf("%s%n", "Zebror: " + zebraCount + " Cheetah: " + cheetahCount);   //Type out full cheetah count
+            System.out.printf("%s%n", "Zebras: " + zebraCount + " Cheetah: " + cheetahCount);   //Type out full cheetah count
             Thread.sleep(50);   //Pause. Print-out speed
 
             if (zebraCount == 0) {
