@@ -5,12 +5,12 @@
 Open RobotGame and run main. 
 
 ##### Credits
-Created by @Fjedern (David) :+1:, @PalmquistS (Staffan), @Saurabh311 (Saurabh) and ~~Dennis~~
+Created by @Fjedern (David) :+1:, @PalmquistS (Staffan) :point_left:, @Saurabh311 (Saurabh) :knife: and ~~Dennis~~
 
 - [x] Code finished
 - [ ] All bugs squished
 
-:cat: 
+:cat: :avocado: :unicorn: :badger: :strawberry: :walking_man:
 
 [link to google](http://google.com)
 
