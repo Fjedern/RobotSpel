@@ -9,7 +9,6 @@ Created by @Fjedern (David), @PalmquistS (Staffan) and @Saurabh311 (Saurabh)
 
 ##### Class diagram
 ![Class diagram](ClassDiagram.PNG)
-Format: ![Alt Text](url)
 
 
 - [x] Code finished
