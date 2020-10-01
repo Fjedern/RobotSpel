@@ -5,16 +5,12 @@
 Open RobotGame and run main. 
 
 ##### Credits
-Created by @Fjedern (David), @PalmquistS (Staffan) and @Saurabh311 (Saurabh)
-
-##### Class diagram
-![Class diagram](https://github.com/Fjedern/RobotSpel/blob/master/ClassDiagram.PNG)
-
+Created by @Fjedern (David) :+1:, @PalmquistS (Staffan), @Saurabh311 (Saurabh) and ~~Dennis~~
 
 - [x] Code finished
 - [ ] All bugs squished
 
-:cat: :+1:
+:cat: 
 
 [link to google](http://google.com)
 
