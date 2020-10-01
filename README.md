@@ -8,7 +8,7 @@ Open RobotGame and run main.
 Created by @Fjedern (David), @PalmquistS (Staffan) and @Saurabh311 (Saurabh)
 
 ##### Class diagram
-![Class diagram](ClassDiagram.PNG)
+![Class diagram](https://github.com/Fjedern/RobotSpel/blob/master/ClassDiagram.PNG)
 
 
 - [x] Code finished
