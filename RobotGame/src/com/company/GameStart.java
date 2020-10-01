@@ -14,6 +14,7 @@ public class GameStart {
 
         int startingPositionX;
         int startingPositionY;
+
         //Setup gameBoard
         GameBoard game = new GameBoard(40, 8);
         game.fillArray();
@@ -81,35 +82,28 @@ public class GameStart {
                 }
 
                 animalList.get(j).setHitTheWall(false); // Reset boolean used in moveAnemalLeft etc. in Anemal clas, after the animal has done its random steps.
-                for (int x = 0; x < animalList.size(); x++) { // compare x and y value of each animals  0
-                    for (int y = x + 1; y < animalList.size(); y++) {          //                         1
+                for (int x = 0; x < animalList.size(); x++) {
+                    for (int y = x + 1; y < animalList.size(); y++) {
                         if (animalList.get(x).getCurrentX() == animalList.get(y).getCurrentX() && animalList.get(x).getCurrentY() == animalList.get(y).getCurrentY() && animalList.get(x).getName() != animalList.get(y).getName()) {     //Om samma plats
-                            //if (animalList.get(x).getName() != animalList.get(y).getName()) { // Checking collision between Zebra and Cheetah only not (zebra-zebra) or (cheetah-Cheetah)
-                            if (animalList.get(x).getName() == 'Z') {   //bara om Z i ytterloop
+                            if (animalList.get(x).getName() == 'Z') {
                                 if (animalList.get(y).getHungry() == true) {
                                     animalList.get(y).setHungry(false);
                                     long time = currentTimeMillis();
                                     animalList.get(y).setStartTime(time);
                                     animalList.remove(x);
-
                                     zebraCount--;
-                                    System.out.print("1");// test
                                 }
                                 else {
                                     long currentTime = currentTimeMillis() - animalList.get(y).getStartTime();
-                                    //System.out.println(currentTime);
                                     if (currentTime > 10000) {
                                         animalList.get(y).setHungry(false);
                                         long time = currentTimeMillis();
-                                        //System.out.println(time);
                                         animalList.get(y).setStartTime(time);
                                         animalList.remove(x);
                                         zebraCount--;
-                                        System.out.print("2");
                                     }
                                 }
                             }
-                            //}
                         }
                     }
                 }

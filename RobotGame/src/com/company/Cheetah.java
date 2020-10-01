@@ -8,6 +8,6 @@ public class Cheetah extends Animal{
         setCurrentY(y);
         setSteps(3);
         setName('C');
-        setHitTheWall(false); // Tillkommer
+        setHitTheWall(false);
     }
 }
