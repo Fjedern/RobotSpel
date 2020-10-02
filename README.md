@@ -5,7 +5,7 @@
 Open RobotGame and run main. 
 
 ##### Credits
-Created by @Fjedern (David) :unicorn:, @PalmquistS (Staffan) :point_left:, @Saurabh311 (Saurabh) :walking_man: and :knife: ~~Dennis~~
+Created by @Fjedern (David) :unicorn:, @PalmquistS (Staffan) :point_left:, @Saurabh311 (Saurabh) :walking_man: and ~~Dennis~~
 
 - [x] Code finished
 - [ ] All bugs squished
